@@ -143,10 +143,10 @@ export default function Contact() {
           <p className="text-gray-500 mb-6">Choose the best way to reach us. Our team is always ready to assist you.</p>
           <Stagger className="grid sm:grid-cols-2 gap-5" staggerDelay={0.08}>
             {[
-              [MapPin, 'Our Location', '123 Innovation Drive, Suite 501\nNew York, NY 10001, USA'],
-              [Mail, 'Email Us', 'hello@cubixsol.com\ninfo@cubixsol.com'],
-              [Phone, 'Call Us', '+1 (212) 123-4567\n+1 (212) 987-6543'],
-              [Clock, 'Working Hours', 'Mon - Fri: 9:00 AM - 6:00 PM\nSaturday - Sunday: Closed'],
+              [MapPin, 'Our Location', 'Cubixsol\nCubixsol in UAE\nCubixsol in UK'],
+              [Mail, 'Email Us', 'info@cubixsol.com'],
+              [Phone, 'Call Us', '+92 304 1100028\n+971 58 263 4980\n+44 7354 598366'],
+              [Clock, 'Working Hours', 'Mon - Sat: 9:00 AM - 6:00 PM\n Sunday: Closed'],
             ].map(([Icon, title, desc]) => (
               <StaggerItem key={title}>
                 <div className="card !p-5 h-full hover:-translate-y-1 hover:shadow-soft transition-all duration-300">
@@ -179,18 +179,18 @@ export default function Contact() {
             <Stagger className="space-y-3" staggerDelay={0.06}>
               {faqs.map((f, i) => (
                 <StaggerItem key={f.q}>
-                <div className="bg-white rounded-xl border border-gray-100 overflow-hidden">
-                  <button
-                    onClick={() => setOpenFaq(openFaq === i ? -1 : i)}
-                    className="w-full flex items-center justify-between px-5 py-4 text-left"
-                  >
-                    <span className={`text-sm font-semibold ${openFaq === i ? 'text-primary-600' : 'text-ink'}`}>{f.q}</span>
-                    {openFaq === i ? <Minus className="w-4 h-4 text-primary-600 shrink-0" /> : <Plus className="w-4 h-4 text-gray-400 shrink-0" />}
-                  </button>
-                  {openFaq === i && (
-                    <div className="px-5 pb-4 text-sm text-gray-500 leading-relaxed">{f.a}</div>
-                  )}
-                </div>
+                  <div className="bg-white rounded-xl border border-gray-100 overflow-hidden">
+                    <button
+                      onClick={() => setOpenFaq(openFaq === i ? -1 : i)}
+                      className="w-full flex items-center justify-between px-5 py-4 text-left"
+                    >
+                      <span className={`text-sm font-semibold ${openFaq === i ? 'text-primary-600' : 'text-ink'}`}>{f.q}</span>
+                      {openFaq === i ? <Minus className="w-4 h-4 text-primary-600 shrink-0" /> : <Plus className="w-4 h-4 text-gray-400 shrink-0" />}
+                    </button>
+                    {openFaq === i && (
+                      <div className="px-5 pb-4 text-sm text-gray-500 leading-relaxed">{f.a}</div>
+                    )}
+                  </div>
                 </StaggerItem>
               ))}
             </Stagger>
@@ -224,7 +224,6 @@ function Field({ label, required, error, children }) {
 }
 
 function inputClass(error) {
-  return `w-full px-4 py-2.5 rounded-lg border text-sm focus:outline-none focus:ring-2 transition ${
-    error ? 'border-red-300 focus:ring-red-200' : 'border-gray-200 focus:ring-primary-300'
-  }`;
+  return `w-full px-4 py-2.5 rounded-lg border text-sm focus:outline-none focus:ring-2 transition ${error ? 'border-red-300 focus:ring-red-200' : 'border-gray-200 focus:ring-primary-300'
+    }`;
 }
